@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patatap Clone App</title>
+	<script type="text/javascript" src="paper-full.js"></script>
+	<link rel="stylesheet" type="text/css" href="circles.css">
+	<script type="text/paperscript" canvas="myCanvas">
+	
+function onKeyDown(event) {
+	var maxPoint = new Point(view.size.width, view.size.height);
+	var randomPoint = Point.random();
+	var point = maxPoint * randomPoint;
+	new Path.Circle(point, 20).fillColor = "orange";
+	
+}
+	
+	</script>
+</head>
+<body>
+	<!-- ABOVE: 1. Create a circle and connect circles with keypress
+				2. Make circles to have random location -->
+	
+	<canvas id="myCanvas" resize></canvas>
+</body>
+
+</html>
