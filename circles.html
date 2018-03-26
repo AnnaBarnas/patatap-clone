@@ -5,20 +5,31 @@
 	<script type="text/javascript" src="paper-full.js"></script>
 	<link rel="stylesheet" type="text/css" href="circles.css">
 	<script type="text/paperscript" canvas="myCanvas">
-	
+
+var circles = [];
+
 function onKeyDown(event) {
 	var maxPoint = new Point(view.size.width, view.size.height);
 	var randomPoint = Point.random();
 	var point = maxPoint * randomPoint;
-	new Path.Circle(point, 20).fillColor = "orange";
-	
+	var newCircle = new Path.Circle(point, 300);
+	newCircle.fillColor = "orange";
+	circles.push(newCircle);
 }
-	
+function onFrame(event) {
+	for(var i = 0; i < circles.length; i++) {
+		circles[i].fillColor.hue += 1;
+		circles[i].scale(0.91);
+		}
+}
+
 	</script>
 </head>
 <body>
 	<!-- ABOVE: 1. Create a circle and connect circles with keypress
-				2. Make circles to have random location -->
+				2. Make circles to have random location
+				3. Create 1 color animated circle which schrinks
+				4. Loop through circles to make all of them schrinking and changing colors-->
 	
 	<canvas id="myCanvas" resize></canvas>
 </body>
