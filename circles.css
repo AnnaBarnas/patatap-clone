@@ -8,3 +8,13 @@ body, html	{
 	height: 100%;
 	margin: 0;
 }
+
+h1 {
+	background-color: steelblue;
+	margin: 0;
+	text-align: center;
+	font-family: Pacifico;
+	font-weight: lighter;
+	font-size: 20px;
+	padding-top: 20px;
+}
